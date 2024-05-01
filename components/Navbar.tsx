@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 export default function Navbar() {
   return (
-    <header className="navbar-wrapper fixed top-0 w-full bg-opacity-90 backdrop-blur-lg z-50">
+    <header className=" p-1 navbar-wrapper fixed top-0 w-full bg-opacity-90 backdrop-blur-lg z-50">
       <motion.div
         className="p-5 flex items-center justify-center h-20 sm:gap-7 gap-3 flex-wrap"
         initial={{ y: -100, opacity: 0 }}
