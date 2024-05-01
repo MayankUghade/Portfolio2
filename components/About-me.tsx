@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function AboutMe() {
   return (
     <div className="w-full p-3 flex flex-col gap-5 items-center justify-center mt-5">
-      <h1 className="font-bold text-2xl"> About Me</h1>
+      <h1 className="font-bold text-3xl"> About Me</h1>
       <div className="flex md:flex-row flex-col gap-10 items-center justify-center">
         <p className="md:w-[45%] text-left sm:text-lg text-sm">
           In a nutshell, I'm{" "}
