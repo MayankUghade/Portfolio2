@@ -8,8 +8,8 @@ export default function ModeToggle() {
   const { theme, setTheme } = useTheme();
 
   return (
-    <div className="mr-[100px]">
-      <div className="p-3 rounded-full border-2 border-gray-500 w-fit cursor-pointer absolute bottom-4 right-4">
+    <div className="fixed bottom-4 right-4">
+      <div className="p-3 rounded-full border-2 border-gray-500 w-fit cursor-pointer">
         {theme === "dark" ? (
           <SunIcon
             className="w-[25px] h-[25px]"

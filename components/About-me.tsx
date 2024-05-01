@@ -1,8 +1,16 @@
+"use client";
+
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function AboutMe() {
   return (
-    <div className="w-full p-3 flex flex-col gap-5 items-center justify-center mt-5">
+    <motion.div
+      className="w-full p-3 flex flex-col gap-5 items-center justify-center mt-5"
+      initial={{ opacity: 0, y: 100 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.155 }}
+    >
       <h1 className="font-bold text-3xl"> About Me</h1>
       <div className="flex md:flex-row flex-col gap-10 items-center justify-center">
         <p className="md:w-[45%] text-left sm:text-lg text-sm">
@@ -41,6 +49,6 @@ export default function AboutMe() {
           <Image src="./about_me.svg" alt="Image" objectFit="cover" fill />
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
