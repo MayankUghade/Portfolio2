@@ -53,7 +53,7 @@ export const projectsData = [
 
 export default function Projects() {
   const { ref, inView } = useInView({
-    threshold: 0.4,
+    threshold: 0.2,
   });
   const { setActiveSection } = useActiveSectionContext();
 
