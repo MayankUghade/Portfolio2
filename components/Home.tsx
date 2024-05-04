@@ -5,21 +5,10 @@ import { motion } from "framer-motion";
 import { LinkedInLogoIcon } from "@radix-ui/react-icons";
 import { FaSquareXTwitter } from "react-icons/fa6";
 import { FaSquareGithub } from "react-icons/fa6";
-import { useInView } from "react-intersection-observer";
-import { useActiveSectionContext } from "@/context/active-section";
-import { useEffect } from "react";
+import { useSectionInView } from "@/lib/hooks";
 
 export default function Home() {
-  const { ref, inView } = useInView({
-    threshold: 0.5,
-  });
-  const { setActiveSection } = useActiveSectionContext();
-
-  useEffect(() => {
-    if (inView) {
-      setActiveSection("Home");
-    }
-  }, [inView, setActiveSection]);
+  const { ref } = useSectionInView("Home", 0.5);
 
   return (
     <section

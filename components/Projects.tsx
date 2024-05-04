@@ -4,6 +4,7 @@ import { useActiveSectionContext } from "@/context/active-section";
 import ProjectCard from "./Project-card";
 import React, { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
+import { useSectionInView } from "@/lib/hooks";
 
 export const projectsData = [
   {
@@ -52,16 +53,7 @@ export const projectsData = [
 ] as const;
 
 export default function Projects() {
-  const { ref, inView } = useInView({
-    threshold: 0.2,
-  });
-  const { setActiveSection, timeOfLastClick } = useActiveSectionContext();
-
-  useEffect(() => {
-    if (inView && Date.now() - timeOfLastClick > 1000) {
-      setActiveSection("Projects");
-    }
-  }, [inView, setActiveSection]);
+  const { ref } = useSectionInView("Projects", 0.2);
 
   return (
     <div
