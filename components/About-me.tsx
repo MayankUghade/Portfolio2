@@ -2,14 +2,30 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { useActiveSectionContext } from "@/context/active-section";
+import { useEffect } from "react";
 
 export default function AboutMe() {
+  const { ref, inView } = useInView({
+    threshold: 0.75,
+  });
+  const { setActiveSection } = useActiveSectionContext();
+
+  useEffect(() => {
+    if (inView) {
+      setActiveSection("About");
+    }
+  }, [inView, setActiveSection]);
+
   return (
     <motion.div
-      className="w-full p-3 flex flex-col gap-5 items-center justify-center mt-5"
+      ref={ref}
+      className="w-full p-3 flex flex-col gap-5 items-center justify-center mt-5 scroll-mt-28"
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.155 }}
+      id="about"
     >
       <h1 className="font-bold text-3xl"> About Me</h1>
       <div className="flex md:flex-row flex-col gap-10 items-center justify-center">

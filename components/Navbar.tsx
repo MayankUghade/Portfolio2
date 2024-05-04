@@ -1,7 +1,38 @@
 "use client";
 
+import { useActiveSectionContext } from "@/context/active-section";
 import { motion } from "framer-motion";
+import Link from "next/link";
+
+export const links = [
+  {
+    name: "Home",
+    hash: "#home",
+  },
+  {
+    name: "About",
+    hash: "#about",
+  },
+  {
+    name: "Projects",
+    hash: "#projects",
+  },
+  {
+    name: "Skills",
+    hash: "#skills",
+  },
+  {
+    name: "Experience",
+    hash: "#experience",
+  },
+  {
+    name: "Contact",
+    hash: "#contact",
+  },
+] as const;
+
 export default function Navbar() {
+  const { activeSection, setActiveSection } = useActiveSectionContext();
   return (
     <header className=" p-1 navbar-wrapper fixed top-0 w-full bg-opacity-90 backdrop-blur-lg z-50">
       <motion.div
@@ -9,24 +40,31 @@ export default function Navbar() {
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
       >
-        <h1 className="cursor-pointer text-sm sm:text-lg dark:hover:bg-gray-800/50 hover:bg-gray-300 bg-opacity-20 px-3 py-1 rounded-full">
-          Home
-        </h1>
-        <h1 className="cursor-pointer text-sm sm:text-lg dark:hover:bg-gray-800/50 hover:bg-gray-300 bg-opacity-20 px-3 py-1 rounded-full">
-          About
-        </h1>
-        <h1 className="cursor-pointer text-sm sm:text-lg dark:hover:bg-gray-800/50 hover:bg-gray-300 bg-opacity-20 px-3 py-1 rounded-full">
-          Projects
-        </h1>
-        <h1 className="cursor-pointer text-sm sm:text-lg dark:hover:bg-gray-800/50 hover:bg-gray-300 bg-opacity-20 px-3 py-1 rounded-full">
-          Experience
-        </h1>
-        <h1 className="cursor-pointer text-sm sm:text-lg dark:hover:bg-gray-800/50 hover:bg-gray-300 bg-opacity-20 px-3 py-1 rounded-full">
-          Skills
-        </h1>
-        <h1 className="cursor-pointer text-sm sm:text-lg dark:hover:bg-gray-800/50 hover:bg-gray-300 bg-opacity-20 px-3 py-1 rounded-full">
-          Contact
-        </h1>
+        {links.map((link, index) => (
+          <Link
+            key={index}
+            href={link.hash}
+            className={`cursor-pointer text-sm sm:text-lg ${
+              activeSection === link.name
+                ? "font-semibold dark:text-black text-white"
+                : ""
+            } px-3 py-1 rounded-full relative`}
+            onClick={() => setActiveSection(link.name)}
+          >
+            {link.name}
+            {link.name === activeSection && (
+              <motion.span
+                className="dark:bg-gray-100/60 bg-gray-800/60 rounded-full absolute inset-0 -z-10"
+                layoutId="activeSection"
+                transition={{
+                  type: "spring",
+                  stiffness: 380,
+                  damping: 30,
+                }}
+              ></motion.span>
+            )}
+          </Link>
+        ))}
       </motion.div>
     </header>
   );

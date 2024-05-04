@@ -1,5 +1,9 @@
+"use client";
+
+import { useActiveSectionContext } from "@/context/active-section";
 import ProjectCard from "./Project-card";
-import React from "react";
+import React, { useEffect } from "react";
+import { useInView } from "react-intersection-observer";
 
 export const projectsData = [
   {
@@ -48,8 +52,23 @@ export const projectsData = [
 ] as const;
 
 export default function Projects() {
+  const { ref, inView } = useInView({
+    threshold: 0.4,
+  });
+  const { setActiveSection } = useActiveSectionContext();
+
+  useEffect(() => {
+    if (inView) {
+      setActiveSection("Projects");
+    }
+  }, [inView, setActiveSection]);
+
   return (
-    <div className="w-full flex flex-col items-center justify-center py-20 gap-9">
+    <div
+      ref={ref}
+      className="w-full flex flex-col items-center justify-center py-[120px] gap-9 scroll-mt-26"
+      id="projects"
+    >
       <h1 className="text-center font-bold text-3xl">My projects</h1>
 
       <div className="flex flex-wrap items-center justify-center gap-7 p-3 w-full">

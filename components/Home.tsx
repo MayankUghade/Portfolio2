@@ -5,10 +5,28 @@ import { motion } from "framer-motion";
 import { LinkedInLogoIcon } from "@radix-ui/react-icons";
 import { FaSquareXTwitter } from "react-icons/fa6";
 import { FaSquareGithub } from "react-icons/fa6";
+import { useInView } from "react-intersection-observer";
+import { useActiveSectionContext } from "@/context/active-section";
+import { useEffect } from "react";
 
 export default function Home() {
+  const { ref, inView } = useInView({
+    threshold: 0.5,
+  });
+  const { setActiveSection } = useActiveSectionContext();
+
+  useEffect(() => {
+    if (inView) {
+      setActiveSection("Home");
+    }
+  }, [inView, setActiveSection]);
+
   return (
-    <section className="sm:p-5 p-3 flex flex-col sm:gap-9 gap-5">
+    <section
+      ref={ref}
+      className="sm:p-5 p-3 flex flex-col sm:gap-9 gap-5 scroll-mt-[200px]"
+      id="home"
+    >
       <motion.div
         className="flex flex-col sm:gap-5 gap-3"
         initial={{ opacity: 0, y: 100 }}
