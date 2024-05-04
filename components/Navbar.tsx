@@ -32,7 +32,8 @@ export const links = [
 ] as const;
 
 export default function Navbar() {
-  const { activeSection, setActiveSection } = useActiveSectionContext();
+  const { activeSection, setActiveSection, setTimeOfLastClick } =
+    useActiveSectionContext();
   return (
     <header className=" p-1 navbar-wrapper fixed top-0 w-full bg-opacity-90 backdrop-blur-lg z-50">
       <motion.div
@@ -49,7 +50,10 @@ export default function Navbar() {
                 ? "font-semibold dark:text-black text-white"
                 : ""
             } px-3 py-1 rounded-full relative`}
-            onClick={() => setActiveSection(link.name)}
+            onClick={() => {
+              setActiveSection(link.name);
+              setTimeOfLastClick(Date.now());
+            }}
           >
             {link.name}
             {link.name === activeSection && (
