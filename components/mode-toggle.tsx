@@ -9,15 +9,15 @@ export default function ModeToggle() {
 
   return (
     <div className="fixed bottom-4 right-4">
-      <div className="p-3 rounded-full border-2 border-gray-500 w-fit cursor-pointer">
+      <div className="p-3 rounded-full shadow border-2 w-fit cursor-pointer bg-white">
         {theme === "dark" ? (
           <SunIcon
-            className="w-[25px] h-[25px]"
+            className="w-[25px] h-[25px] text-black"
             onClick={() => setTheme("light")}
           />
         ) : (
           <MoonIcon
-            className="w-[25px] h-[25px]"
+            className="w-[25px] h-[25px] text-black"
             onClick={() => setTheme("dark")}
           />
         )}

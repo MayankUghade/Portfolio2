@@ -46,7 +46,13 @@ export default function AboutMe() {
         </p>
 
         <div className="md:w-[40%] w-[100%] md:h-[300px] h-[200px] ml-5 relative">
-          <Image src="./about_me.svg" alt="Image" objectFit="cover" fill />
+          <Image
+            src="./about_me.svg"
+            alt="Image"
+            objectFit="cover"
+            fill
+            quality={95}
+          />
         </div>
       </div>
     </motion.div>
