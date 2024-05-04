@@ -100,7 +100,7 @@ export default function Skills() {
   return (
     <div
       ref={ref}
-      className="w-full sm: flex flex-col items-center justify-center p-2 scroll-mt-28"
+      className="w-full flex flex-col items-center justify-center p-2 scroll-mt-28 mb-10"
       id="skills"
     >
       <h1 className="text-3xl font-bold text-center">My skills</h1>
