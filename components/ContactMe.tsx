@@ -1,9 +1,11 @@
 "use client";
 
-import { FaPaperPlane } from "react-icons/fa6";
-import { Button } from "./ui/button";
 import { useSectionInView } from "@/lib/hooks";
 import { motion } from "framer-motion";
+import { sendEmail } from "@/Actions/actions";
+import toast from "react-hot-toast";
+import { useFormStatus } from "react-dom";
+import SubmitBtn from "./Submit_button";
 
 export default function Contact() {
   const { ref } = useSectionInView("Contact", 0.3);
@@ -22,7 +24,7 @@ export default function Contact() {
         once: true,
       }}
       ref={ref}
-      className="w-full flex flex-col gap-5 items-center justify-center mt-[-120px] p-3"
+      className="w-full flex flex-col gap-5 items-center justify-center p-3 scroll-mt-28"
       id="contact"
     >
       <h1 className="text-center font-bold text-3xl">Contact Me</h1>
@@ -35,7 +37,19 @@ export default function Contact() {
         or use this form to get in touch.
       </p>
 
-      <form className="sm:w-[500px] w-[100%] flex flex-col gap-3">
+      <form
+        className="sm:w-[500px] w-[100%] flex flex-col gap-3"
+        action={async (formData) => {
+          const response = await sendEmail(formData);
+
+          if (!response) {
+            toast.error("Something went wrong, Email not sent");
+            return;
+          }
+
+          toast.success("Email sent successfully!");
+        }}
+      >
         <input
           className="w-full p-3 rounded-md dark:bg-gray-800 border border-black/50 bg-gray-100"
           name="senderName"
@@ -59,10 +73,8 @@ export default function Contact() {
           required
           maxLength={5000}
         />
-        <Button className="w-fit flex gap-2 items-center">
-          Submit
-          <FaPaperPlane className="w-[15px] h-[15px]" />
-        </Button>
+
+        <SubmitBtn />
       </form>
     </motion.div>
   );

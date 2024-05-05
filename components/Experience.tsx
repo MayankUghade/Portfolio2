@@ -47,7 +47,7 @@ export default function Experience() {
     <section
       id="experience"
       ref={ref}
-      className="w-full flex flex-col gap-10 items-center justify-center scroll-mt-28 mb-28 sm:mb-40 py-[120px]"
+      className="w-full flex flex-col gap-10 items-center justify-center scroll-mt-28 py-[120px]"
     >
       <h1 className="font-bold text-3xl">My experience</h1>
 
