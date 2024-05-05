@@ -4,6 +4,7 @@ import Divider from "@/components/SectionDivider";
 import Projects from "@/components/Projects";
 import Skills from "@/components/skills";
 import Experience from "@/components/Experience";
+import Contact from "@/components/ContactMe";
 
 export default function Page() {
   return (
@@ -14,6 +15,7 @@ export default function Page() {
       <Projects />
       <Skills />
       <Experience />
+      <Contact />
     </div>
   );
 }

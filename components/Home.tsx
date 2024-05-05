@@ -6,9 +6,13 @@ import { LinkedInLogoIcon } from "@radix-ui/react-icons";
 import { FaSquareXTwitter } from "react-icons/fa6";
 import { FaSquareGithub } from "react-icons/fa6";
 import { useSectionInView } from "@/lib/hooks";
+import Link from "next/link";
+import { useActiveSectionContext } from "@/context/active-section";
 
 export default function Home() {
   const { ref } = useSectionInView("Home", 0.5);
+
+  const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
 
   return (
     <section
@@ -45,10 +49,17 @@ export default function Home() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.124 }}
       >
-        <div className="flex cursor-pointer items-center gap-3 lg:text-lg md:text-md sm:text-sm text-xs lg:px-8 lg:py-4 px-3 py-2 font-semibold rounded-lg bg-black/80 text-white">
+        <Link
+          href="/#contact"
+          className="flex cursor-pointer items-center gap-3 lg:text-lg md:text-md sm:text-sm text-xs lg:px-8 lg:py-4 px-3 py-2 font-semibold rounded-lg bg-black/80 text-white"
+          onClick={() => {
+            setActiveSection("Contact");
+            setTimeOfLastClick(Date.now());
+          }}
+        >
           Contact me here
           <MoveRightIcon />
-        </div>
+        </Link>
 
         <a className="flex cursor-pointer items-center gap-3 lg:text-lg md:text-md sm:text-sm text-xs lg:px-8 lg:py-4 px-3 py-2  font-semibold rounded-lg dark:bg-gray-300/20 bg-gray-600/20 dark:text-white text-black">
           Download cv

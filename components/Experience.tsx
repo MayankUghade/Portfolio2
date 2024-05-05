@@ -29,11 +29,11 @@ const experiencesData = [
 const slideAnimationVariants = {
   initial: {
     opacity: 0,
-    x: 100,
+    y: 100,
   },
   animate: (index: number) => ({
     opacity: 1,
-    x: 0,
+    y: 0,
     transition: {
       delay: 0.1 * index,
     },
@@ -47,7 +47,7 @@ export default function Experience() {
     <section
       id="experience"
       ref={ref}
-      className="w-full flex flex-col gap-10 items-center justify-center scroll-mt-28 mb-28 sm:mb-40 py-[80px]"
+      className="w-full flex flex-col gap-10 items-center justify-center scroll-mt-28 mb-28 sm:mb-40 py-[120px]"
     >
       <h1 className="font-bold text-3xl">My experience</h1>
 
@@ -60,6 +60,9 @@ export default function Experience() {
             whileInView="animate"
             key={index}
             custom={index}
+            viewport={{
+              once: true,
+            }}
           >
             <div className="w-[50px] h-[50px] rounded-full dark:bg-gray-800 bg-gray-100 shadow-md border flex items-center justify-center dark:text-white text-black">
               {items.icon}
