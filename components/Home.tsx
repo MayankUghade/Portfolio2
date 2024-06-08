@@ -67,17 +67,32 @@ export default function Home() {
         </a>
 
         <section className="flex gap-3">
-          <div className="rounded-lg lg:px-5 lg:py-3 px-3 py-2 cursor-pointer dark:bg-gray-300/20 dark:text-white bg-gray-700/20 text-black">
+          <Link
+            href="https://www.linkedin.com/in/mayank-ughade-63aab7229/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-lg lg:px-5 lg:py-3 px-3 py-2 cursor-pointer dark:bg-gray-300/20 dark:text-white bg-gray-700/20 text-black"
+          >
             <LinkedInLogoIcon className="lg:w-[30px] lg:h-[30px] w-[20px] h-[20px]" />
-          </div>
+          </Link>
 
-          <div className="rounded-lg lg:px-5 lg:py-3 px-3 py-2 cursor-pointer dark:bg-gray-300/20 dark:text-white bg-gray-700/20">
+          <Link
+            href="https://x.com/MayankUghade3"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-lg lg:px-5 lg:py-3 px-3 py-2 cursor-pointer dark:bg-gray-300/20 dark:text-white bg-gray-700/20"
+          >
             <FaSquareXTwitter className="lg:w-[30px] lg:h-[30px] w-[20px] h-[20px]" />
-          </div>
+          </Link>
 
-          <div className="rounded-lg lg:px-5 lg:py-3 px-3 py-2 cursor-pointer dark:bg-gray-300/20 dark:text-white bg-gray-700/20">
+          <Link
+            href="https://github.com/MayankUghade"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-lg lg:px-5 lg:py-3 px-3 py-2 cursor-pointer dark:bg-gray-300/20 dark:text-white bg-gray-700/20"
+          >
             <FaSquareGithub className="lg:w-[30px] lg:h-[30px] w-[20px] h-[20px]" />
-          </div>
+          </Link>
         </section>
       </motion.div>
     </section>
