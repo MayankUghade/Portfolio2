@@ -33,7 +33,6 @@ export const projectsData = [
     imageUrl: "/news-nugget.png",
   },
   {
-<<<<<<< HEAD
     title: "BidMaster",
     description:
       "BidMaster is a project showcasing an online bidding platform. Users can effortlessly place bids and list products, experiencing seamless transactions and competitive bidding in a user-friendly environment.",
@@ -41,15 +40,6 @@ export const projectsData = [
     githubLink: "https://github.com/MayankUghade/BidMaster",
     liveLink: "https://bid-master.vercel.app/",
     imageUrl: "/BidMaster.png",
-=======
-    title: "AniWave",
-    description:
-      "Anivewave is a straightforward anime app designed to help you find your beloved anime series and manga. It utilizes the JIKAN API integrated with Next.js to deliver a delightful user experience. It's a user-friendly application built around a simple API",
-    tags: ["React", "Next.js", "Tailwind", "Jikan API"],
-    githubLink: "https://github.com/MayankUghade/Aniwave",
-    liveLink: "https://aniwave.vercel.app/",
-    imageUrl: "/aniwave.png",
->>>>>>> origin/main
   },
   {
     title: "Epic-Energize",
