@@ -1,75 +1,36 @@
-"use client";
-
-import { useActiveSectionContext } from "@/context/active-section";
-import { motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
-
-export const links = [
-  {
-    name: "Home",
-    hash: "#home",
-  },
-  {
-    name: "About",
-    hash: "#about",
-  },
-  {
-    name: "Projects",
-    hash: "#projects",
-  },
-  {
-    name: "Skills",
-    hash: "#skills",
-  },
-  {
-    name: "Experience",
-    hash: "#experience",
-  },
-  {
-    name: "Contact",
-    hash: "#contact",
-  },
-] as const;
+import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa6";
 
 export default function Navbar() {
-  const { activeSection, setActiveSection, setTimeOfLastClick } =
-    useActiveSectionContext();
   return (
-    <header className=" p-1 navbar-wrapper fixed top-0 w-full bg-opacity-90 backdrop-blur-lg z-50">
-      <motion.div
-        className="p-5 flex items-center justify-center h-20 sm:gap-7 gap-3 flex-wrap"
-        initial={{ y: -100, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-      >
-        {links.map((link, index) => (
-          <Link
-            key={index}
-            href={link.hash}
-            className={`cursor-pointer text-sm sm:text-lg ${
-              activeSection === link.name
-                ? "font-semibold dark:text-black text-white"
-                : ""
-            } px-3 py-1 rounded-full relative`}
-            onClick={() => {
-              setActiveSection(link.name);
-              setTimeOfLastClick(Date.now());
-            }}
-          >
-            {link.name}
-            {link.name === activeSection && (
-              <motion.span
-                className="dark:bg-gray-100/60 bg-gray-800/60 rounded-full absolute inset-0 -z-10"
-                layoutId="activeSection"
-                transition={{
-                  type: "spring",
-                  stiffness: 380,
-                  damping: 30,
-                }}
-              ></motion.span>
-            )}
+    <div className="border-b bg-black z-50 relative bg-opacity-50 ">
+      <div className="flex items-center justify-between p-5 lg:container">
+        <div className="flex items-center gap-5 ">
+          <Link href="/">
+            <Image src="/letter-m.png" alt="Logo" width={27} height={27} />
           </Link>
-        ))}
-      </motion.div>
-    </header>
+          <div className="sm:flex hidden items-center gap-5">
+            <h1 className="text-sm hover:text-gray-400 cursor-pointer">
+              Projects
+            </h1>
+            <h1 className="text-sm hover:text-gray-400 cursor-pointer">
+              Experience
+            </h1>
+            <h1 className="text-sm hover:text-gray-400 cursor-pointer">
+              About Me
+            </h1>
+            <h1 className="text-sm hover:text-gray-400 cursor-pointer">
+              Contact
+            </h1>
+          </div>
+        </div>
+        <div className="flex items-center sm:gap-5 gap-3">
+          <FaGithub className="text-2xl" />
+          <FaLinkedin className="text-2xl" />
+          <FaTwitter className="text-2xl" />
+        </div>
+      </div>
+    </div>
   );
 }
