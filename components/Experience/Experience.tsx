@@ -36,16 +36,12 @@ export default function Experience() {
   return (
     <div className="mt-[200px] flex items-center flex-col justify-center">
       <h1 className="font-bold text-3xl">My experience</h1>
-      <div className="max-w-[1050px]">
-        <TracingBeam className=" sm:flex hidden">
+      <div>
+        <TracingBeam className="sm:flex hidden">
           <section className="w-full flex flex-col gap-10 items-center justify-center scroll-mt-28 py-[120px]">
             <div className="flex flex-col gap-10 max-w-[900px]">
               {experiencesData.map((items, index) => (
-                <div className="flex gap-3" key={index}>
-                  <div className="w-[50px] h-[50px] rounded-full dark:bg-gray-800 bg-gray-100 shadow-md border sm:flex hidden items-center justify-center dark:text-white text-black ">
-                    {items.icon}
-                  </div>
-
+                <div key={index}>
                   <div className=" p-5 w-full border rounded-lg">
                     <h1 className="font-semibold text-2xl capitalize">
                       {items.title}
@@ -55,7 +51,6 @@ export default function Experience() {
                     <p className="mt-4 font-normal text-gray-700 dark:text-white/75">
                       {items.description}
                     </p>
-
                     <p className="font-normal mt-5">{items.date}</p>
                   </div>
                 </div>
@@ -64,14 +59,10 @@ export default function Experience() {
           </section>
         </TracingBeam>
 
-        <section className="w-full flex flex-col gap-10 items-center justify-center scroll-mt-28 sm:hidden ">
+        <section className="w-full flex sm:hidden flex-col gap-10 items-center justify-center scroll-mt-28 py-[30px] ">
           <div className="flex flex-col gap-10 max-w-[900px]">
             {experiencesData.map((items, index) => (
-              <div className="flex gap-3" key={index}>
-                <div className="w-[50px] h-[50px] rounded-full dark:bg-gray-800 bg-gray-100 shadow-md border flex items-center justify-center dark:text-white text-black">
-                  {items.icon}
-                </div>
-
+              <div key={index}>
                 <div className=" p-5 w-full border rounded-lg">
                   <h1 className="font-semibold text-2xl capitalize">
                     {items.title}
@@ -81,7 +72,6 @@ export default function Experience() {
                   <p className="mt-4 font-normal text-gray-700 dark:text-white/75">
                     {items.description}
                   </p>
-
                   <p className="font-normal mt-5">{items.date}</p>
                 </div>
               </div>

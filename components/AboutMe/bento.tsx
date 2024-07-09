@@ -153,7 +153,7 @@ const BentoGrid: React.FC = () => {
           </div>
         ))}
       </div>
-      <Link href="/">
+      <Link href="/about_me">
         <Button variant="outline">More About Me</Button>
       </Link>
     </div>

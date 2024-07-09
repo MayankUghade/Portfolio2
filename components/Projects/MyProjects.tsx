@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Button } from "../ui/button";
 import ProjectCard from "./Projectcard";
 
@@ -56,8 +57,8 @@ export default function Myprojects() {
           <ProjectCard key={data.title} data={data} />
         ))}
       </div>
-      <Button className="mt-3" variant="outline">
-        More Projects
+      <Button className="mt-3" variant="outline" asChild>
+        <Link href="/myprojects">More Projects</Link>
       </Button>
     </div>
   );

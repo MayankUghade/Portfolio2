@@ -8,7 +8,10 @@ import { HoverBorderGradient } from "./ui/border-hover";
 export function Home() {
   return (
     <section className="relative flex items-center justify-center rounded-md bg-background/[0.96] py-16 md:py-48">
-      <Spotlight className="z-10 top-40 left-0 md:left-60 md:-top-20" />
+      <Spotlight
+        className=" z-10 -top-20 left-0 md:left-60 md:-top-20"
+        fill="white"
+      />
       <div className="flex flex-col items-center gap-4 sm:mt-[-70px]">
         <HoverBorderGradient className="flex items-center gap-2 text-sm">
           <FaCircle className="size-2 animate-pulse fill-green-600 text-green-600" />
