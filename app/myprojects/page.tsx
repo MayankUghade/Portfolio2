@@ -1,6 +1,6 @@
 import ProjectCard from "@/components/Projects/Projectcard";
 
-export const projectsData = [
+const projectsData = [
   {
     title: "Dev-Union",
     description:
@@ -94,7 +94,7 @@ export const projectsData = [
     liveLink: "",
     imageUrl: "/sidekick.png",
   },
-] as const;
+];
 export default function page() {
   return (
     <div className="lg:container p-3 flex flex-col items-center justify-center mt-10">
