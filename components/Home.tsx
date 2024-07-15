@@ -37,7 +37,12 @@ export function Home() {
           merging creativity and functionality to deliver exceptional user
           experiences.
         </p>
-        <div className="flex flex-col sm:flex-row sm:gap-5 gap-2 items-center">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ ease: "easeOut", duration: 1 }}
+          className="flex flex-col sm:flex-row sm:gap-5 gap-2 items-center"
+        >
           <Button asChild>
             <Link
               href="/Mayank_resume.pdf"
@@ -52,7 +57,7 @@ export function Home() {
             <GrContactInfo className="mr-2 text-xl" />
             Contact Me
           </Button>
-        </div>
+        </motion.div>
       </motion.div>
     </section>
   );
