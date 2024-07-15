@@ -1,6 +1,9 @@
+"use client";
 import { IoCodeWorking, IoLaptopOutline } from "react-icons/io5";
 import { TracingBeam } from "../ui/tracing-beam";
 import { FaGraduationCap } from "react-icons/fa6";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const experiencesData = [
   {
@@ -33,8 +36,19 @@ const experiencesData = [
 ] as const;
 
 export default function Experience() {
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
   return (
-    <div className="mt-[200px] flex items-center flex-col justify-center">
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 20 }}
+      transition={{ ease: "easeOut", duration: 0.5 }}
+      className="mt-[200px] flex items-center flex-col justify-center scroll-mt-28"
+      id="experience"
+    >
       <h1 className="font-bold text-3xl">My experience</h1>
       <div>
         <TracingBeam className="sm:flex hidden">
@@ -79,6 +93,6 @@ export default function Experience() {
           </div>
         </section>
       </div>
-    </div>
+    </motion.div>
   );
 }

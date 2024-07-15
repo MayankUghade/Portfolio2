@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import profile from "@/public/profile.jpeg";
 import { IoLogoHtml5, IoLogoNodejs, IoLogoPython } from "react-icons/io5";
@@ -12,6 +14,7 @@ import {
   SiTailwindcss,
   SiNextdotjs,
 } from "react-icons/si";
+import { motion } from "framer-motion";
 
 const skills = [
   {
@@ -78,7 +81,12 @@ const skills = [
 
 export default function page() {
   return (
-    <div className="mt-10 lg:container w-full p-2">
+    <motion.div
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ ease: "easeOut", duration: 0.5 }}
+      className="mt-10 lg:container w-full p-2"
+    >
       <h1 className="font-bold text-3xl mb-2 ml-3">Who am I</h1>
       <div className=" border-t p-3 flex md:flex-row flex-col gap-10 items-center">
         <div>
@@ -129,6 +137,6 @@ export default function page() {
         <h1 className="p-2">Aceternity UI</h1>
         <h1 className="p-2">Tailwind Css</h1>
       </div>
-    </div>
+    </motion.div>
   );
 }

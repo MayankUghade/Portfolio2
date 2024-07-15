@@ -1,6 +1,9 @@
+"use client";
 import Link from "next/link";
 import { Button } from "../ui/button";
 import ProjectCard from "./Projectcard";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 export const projectsData = [
   {
@@ -49,17 +52,28 @@ export const projectsData = [
 ] as const;
 
 export default function Myprojects() {
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
   return (
-    <div className="w-full flex flex-col items-center justify-center mt-[200px]">
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 20 }}
+      transition={{ ease: "easeOut", duration: 0.5 }}
+      className="w-full flex flex-col items-center justify-center mt-[200px]"
+    >
       <h1 className="text-4xl font-bold mb-7">My Projects</h1>
+
       <div className="flex flex-wrap gap-5 items-center justify-center ">
         {projectsData.map((data) => (
           <ProjectCard key={data.title} data={data} />
         ))}
       </div>
-      <Button className="mt-3" variant="outline" asChild>
+      <Button className="mt-3" asChild>
         <Link href="/myprojects">More Projects</Link>
       </Button>
-    </div>
+    </motion.div>
   );
 }

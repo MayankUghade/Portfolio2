@@ -13,6 +13,7 @@ import MarqueeDemo from "./Skills";
 import Image from "next/image";
 import { Button } from "../ui/button";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 interface BentoItem {
   id: number;
@@ -154,7 +155,7 @@ const BentoGrid: React.FC = () => {
         ))}
       </div>
       <Link href="/about_me">
-        <Button variant="outline">More About Me</Button>
+        <Button>More About Me</Button>
       </Link>
     </div>
   );
