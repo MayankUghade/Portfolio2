@@ -18,7 +18,7 @@ export function Home() {
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ ease: "easeOut", duration: 0.5 }}
+        transition={{ ease: "easeOut", duration: 1 }}
         className="flex flex-col items-center gap-4 sm:mt-[-70px]"
       >
         <HoverBorderGradient className="flex items-center gap-2 text-sm">
