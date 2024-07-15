@@ -53,9 +53,11 @@ export function Home() {
               Download My Resume
             </Link>
           </Button>
-          <Button>
-            <GrContactInfo className="mr-2 text-xl" />
-            Contact Me
+          <Button asChild>
+            <Link href="/#contact">
+              <GrContactInfo className="mr-2 text-xl" />
+              Contact Me
+            </Link>
           </Button>
         </motion.div>
       </motion.div>
