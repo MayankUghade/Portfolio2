@@ -46,9 +46,27 @@ export default function Navbar() {
           </div>
         </div>
         <div className="sm:flex hidden items-center sm:gap-5 gap-3">
-          <FaGithub className="text-2xl" />
-          <FaLinkedin className="text-2xl" />
-          <FaTwitter className="text-2xl" />
+          <Link
+            href="https://github.com/MayankUghade"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaGithub className="text-2xl" />
+          </Link>
+          <Link
+            href="https://www.linkedin.com/in/mayank-ughade-63aab7229/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaLinkedin className="text-2xl" />
+          </Link>
+          <Link
+            href="https://x.com/MayankUghade3"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaTwitter className="text-2xl" />
+          </Link>
         </div>
         <SmallNav />
       </div>
