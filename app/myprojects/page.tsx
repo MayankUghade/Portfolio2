@@ -17,7 +17,7 @@ const projectsData = [
     title: "InsightFul",
     description:
       "InsightFul is a fullstack tool that helps saas developers collect valuable user feedback and insights to improve your product and delight your customers. This tool makes sure you can collect feedback at one place.",
-    tags: ["React", "Next.js", "Tailwind", "Next-Auth", "MongoDB", "vercel"],
+    tags: ["React", "Next.js", "Tailwind", "Next-Auth", "MongoDB", "Prisma"],
     githubLink: "https://github.com/MayankUghade/InsightFul",
     liveLink: "https://insightful-two.vercel.app/",
     imageUrl: "/insightful.png",
@@ -82,20 +82,13 @@ const projectsData = [
     imageUrl: "/permitech.png",
   },
   {
-    title: "Sidekick (still working on it)",
+    title: "WorkFlow",
     description:
-      "SideKick is a cool social media platform for discovering, collaborating on, rating side projects, connecting with like minded individuals around the globe for feedback and growth.",
-    tags: [
-      "React",
-      "Next-Js",
-      "Kinde Auth",
-      "postgre sql",
-      "Prisma",
-      "Acternity UI",
-    ],
-    githubLink: "https://github.com/MayankUghade/SideKick",
-    liveLink: "",
-    imageUrl: "/sidekick.png",
+      "Workflow is a powerful task management application that helps you and your team stay organized and productive.This application contains drag and drop feature that allows user to change the status of the project as well. ",
+    tags: ["React", "Next-Js", "Kinde Auth", "postgre sql", "Prisma"],
+    githubLink: "https://github.com/MayankUghade/work-flow",
+    liveLink: "https://workflow-2.vercel.app/",
+    imageUrl: "/workflow.png",
   },
 ];
 export default function page() {
