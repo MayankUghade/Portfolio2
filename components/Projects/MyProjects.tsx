@@ -32,13 +32,13 @@ export const projectsData = [
     imageUrl: "/news-nugget.png",
   },
   {
-    title: "BidMaster",
+    title: "InsightFul",
     description:
-      "BidMaster is an online platform for seamless transactions, allowing users to place bids and list products effortlessly.",
-    tags: ["React", "Next.js", "Tailwind", "Kinde Auth"],
-    githubLink: "https://github.com/MayankUghade/BidMaster",
-    liveLink: "https://bid-master.vercel.app/",
-    imageUrl: "/BidMaster.png",
+      "InsightFul is a fullstack tool that helps saas developers collect valuable user feedback and insights to improve your product and delight your customers. This tool makes sure you can collect feedback at one place.",
+    tags: ["React", "Next.js", "Tailwind", "Next-Auth", "MongoDB", "vercel"],
+    githubLink: "https://github.com/MayankUghade/InsightFul",
+    liveLink: "https://insightful-two.vercel.app/",
+    imageUrl: "/insightful.png",
   },
   {
     title: "Epic-Energize",

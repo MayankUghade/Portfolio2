@@ -14,6 +14,15 @@ const projectsData = [
     imageUrl: "/dev-union.png",
   },
   {
+    title: "InsightFul",
+    description:
+      "InsightFul is a fullstack tool that helps saas developers collect valuable user feedback and insights to improve your product and delight your customers. This tool makes sure you can collect feedback at one place.",
+    tags: ["React", "Next.js", "Tailwind", "Next-Auth", "MongoDB", "vercel"],
+    githubLink: "https://github.com/MayankUghade/InsightFul",
+    liveLink: "https://insightful-two.vercel.app/",
+    imageUrl: "/insightful.png",
+  },
+  {
     title: "NewsNugget",
     description:
       "NewsNugget, powered by HuggingFace AI, condenses Times of India articles into 60-word summaries for quick and easy updates.",
@@ -71,15 +80,6 @@ const projectsData = [
     githubLink: "https://github.com/MayankUghade/permitech",
     liveLink: "https://permitech.vercel.app/",
     imageUrl: "/permitech.png",
-  },
-  {
-    title: "Cryptic",
-    description:
-      "A cool and simple application where people can read about important cryptio news and make sure they are connected with the crypto. also as this was my vry first project, it is not mobile responsive",
-    tags: ["React", "Rapid API"],
-    githubLink: "https://github.com/MayankUghade/CRYPTIC",
-    liveLink: "https://cryptic-three.vercel.app/",
-    imageUrl: "/cryptic.png",
   },
   {
     title: "Sidekick (still working on it)",
