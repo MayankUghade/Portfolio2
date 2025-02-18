@@ -7,6 +7,33 @@ import { useInView } from "react-intersection-observer";
 
 const experiencesData = [
   {
+    title: "SDE Intern",
+    location: "Bangalore, India",
+    organization: "The Product Highway",
+    description:
+      "Developed Mahindra electric cars' landing page & booking platform, increasing user engagement. Built Meta Ads data scraping engine for SaaS platform, automating data collection process. Created full-stack customer management system using NestJS, reducing response time by 60%.",
+    icon: <IoCodeWorking className="w-[40px] h-[40px]" />,
+    date: "Oct 2024 - Present",
+  },
+  {
+    title: "Fullstack Developer",
+    location: "Delhi, India",
+    organization: "Zapllo Software",
+    description:
+      "Built responsive landing page with animated components, improving mobile traffic by 35%. Implemented employee management APIs using Node.js, handling 1000+ daily requests. Created reusable Next.js components, resulting in reduction of development time.",
+    icon: <IoLaptopOutline className="w-[40px] h-[40px]" />,
+    date: "Aug 2024 - Sept 2024",
+  },
+  {
+    title: "Frontend Developer",
+    location: "Gurgaon, India",
+    organization: "Stealth Startup",
+    description:
+      "Built SaaS UI with Next.js, to achieve high user satisfaction rate. Integrated Google Drive API for secure file management system. Implemented SHA-based file encryption for enhanced security.",
+    icon: <IoCodeWorking className="w-[40px] h-[40px]" />,
+    date: "May 2024 - Aug 2024",
+  },
+  {
     title: "Computer-Science Degree",
     location: "Pune, India",
     organization: "Pune University",
@@ -14,24 +41,6 @@ const experiencesData = [
       "I am nearing the completion of my computer engineering degree, currently in the final year. ",
     icon: <FaGraduationCap className="w-[40px] h-[40px]" />,
     date: "2021- present",
-  },
-  {
-    title: "Front-End Developer Intern",
-    location: "Mumbai, India",
-    organization: "Prodigy Infotech",
-    description:
-      "During my internship as a Front-end Developer at a Mumbai-based company, I had the opportunity to apply the React skills I acquired from YouTube tutorials in real-world projects. I actively contributed to the creation of their main webpage, gaining valuable hands-on experience in web development.",
-    icon: <IoCodeWorking className="w-[40px] h-[40px]" />,
-    date: "May 2023 - July 2023",
-  },
-  {
-    title: "Freelance Front-End Developer",
-    location: "Remote",
-    organization: "Self-Employed",
-    description:
-      "As a freelance front-end developer, I specialize in creating dynamic and visually appealing landing pages. My work involves using modern technologies to deliver responsive and user-friendly designs that help businesses enhance their online presence.",
-    icon: <IoLaptopOutline className="w-[40px] h-[40px]" />,
-    date: "Ongoing",
   },
 ] as const;
 

@@ -8,11 +8,11 @@ import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
 import { FaGithub } from "react-icons/fa6";
 import { GrGlobe } from "react-icons/gr";
-
+import Image from "next/image";
 export default function ProjectCard({ data }: any) {
   return (
     <Card className="w-full sm:w-[39%] rounded-lg overflow-hidden shadow-lg h-[520px] flex flex-col">
-      <img
+      <Image
         src={data.imageUrl}
         alt="Project Thumbnail"
         width={400}
